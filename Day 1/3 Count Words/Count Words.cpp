@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    string input;
+    string input = "Hello World";
     int wordCount = 0;
-    cout << "Enter a String: ";
-    cin >> input;
+    // cout << "Enter a String: ";
+    // cin >> input;
 
     for (int index = 0; index < input.length(); index++)
     {

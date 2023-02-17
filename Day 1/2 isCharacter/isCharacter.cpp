@@ -15,11 +15,9 @@ bool isCharacter(int character)
 
 int main()
 {
-    int character;
+    char character;
     cout << "Enter a Character: ";
     cin >> character;
 
-    isCharacter(character);
-
-    return 0;
+    printf("%d", isCharacter(character));
 }
