@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,7 +13,8 @@ public:
             return false;
         }
 
-        int *A = new int[26]{};
+        int *A = new int[500]{};
+        int *B = new int[500]{};
 
         for (int i = 0; i < s.length(); i++)
         {
@@ -20,12 +22,12 @@ public:
             A[x]++;
 
             int y = t[i] - '0';
-            A[y]++;
+            B[y]++;
         }
 
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < 500; i++)
         {
-            if (A[i] != 0)
+            if (A[i] != B[i])
             {
                 return false;
             }
