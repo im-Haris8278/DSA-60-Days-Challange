@@ -8,7 +8,7 @@ int wordsCount(string s)
     bool words = false;
     for (char c : s)
     {
-        if (s == ' ' && words)
+        if (c == ' ' && words)
         {
             count++;
             words = false;
@@ -28,8 +28,8 @@ int wordsCount(string s)
 int main()
 {
     string s = "Hello,    World";
-    // cout << "Enter a String: ";
-    // getline(cin, s);
+     cout << "Enter a String: ";
+     getline(cin, s);
 
     cout << "Number of Words are: ";
     printf("%d", wordsCount(s));
