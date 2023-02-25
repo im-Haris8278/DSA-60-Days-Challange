@@ -30,9 +30,37 @@ public:
 
     void put(K key, V value)
     {
+        int index = Hash(key);
+        if (table[index].empty())
+        {
+            table[index] = list<pair<K, V>>();
+        }
+        auto it = find_if(table[index].begin(), table[index].end(),
+                          [&](const pair<K, V> &p)
+                          { return p.first == key; });
+        if (it == table[index].end())
+        {
+            table[index].push_back(make_pair(key, value));
+        }
+        else
+        {
+            it->second = value;
+        }
     }
 
     void get(K key)
     {
+        int index = Hash(key);
+        auto it = find_if(table[index].begin(), table[index].end(),
+                          [&](const pair<K, V> &p)
+                          { return p.first == key; });
+        if (it == table[index].end())
+        {
+            return NULL;
+        }
+        else
+        {
+            return it->second;
+        }
     }
 };
